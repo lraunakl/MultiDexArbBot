@@ -52,6 +52,8 @@ const Main = async () => {
     });
     console.log(`---`.repeat(10));
 
+   
+
     await oneInch.getProtocols()
         .then((protocols: string[]) => {
             console.log(`Finding the best route for trade on: ${protocols.join(', ')}...👀👀👀`);
@@ -64,6 +66,8 @@ const Main = async () => {
     let on_cooldown = false
     let message = ''
     let users = await User.find({ is_active: true })
+
+
 
     schedule(`*/${config.PRICE_CHECK_INTERVAL_IN_SECONDS} * * * * *`, async function () {
         console.log(`***`.repeat(10));
